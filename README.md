@@ -1,6 +1,6 @@
 # SimpleWebAPI
 
-Welcome to SimpleWebAPI! This is a Cobol application.
+Welcome to SimpleWebAPI! This is a ASP.NET Web API application.
 
 ## Getting Started
 
