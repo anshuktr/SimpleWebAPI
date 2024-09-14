@@ -1,8 +1,6 @@
 # SimpleWebAPI
 
-Welcome to SimpleWebAPI.
-
-This is a ASP.NET Web API application.
+Welcome to SimpleWebAPI. This is a ASP.NET Web API application.
 
 ## Getting Started
 
