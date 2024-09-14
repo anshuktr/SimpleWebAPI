@@ -9,11 +9,19 @@ trigger:
 pool:
   vmImage: ubuntu-latest
   name: "KodeKloudCustomer"
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '5.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+- script: dotnet restore
+  displayName: 'Restore dependencies'
+
+- script: dotnet build --configuration Release --no-restore
+  displayName: 'Build project'
+
+- script: dotnet test --no-build --verbosity normal
+  displayName: 'Run tests'
