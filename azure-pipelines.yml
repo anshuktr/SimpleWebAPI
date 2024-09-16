@@ -1,4 +1,4 @@
-# Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -28,3 +28,24 @@ steps:
 
 - script: dotnet test --no-build --verbosity normal
   displayName: 'Run tests'
+
+- task: XplatGenerateReleaseNotes@4
+  inputs:
+    outputfile: '$(Build.ArtifactStagingDirectory)/wiki/releasenotes.md'
+    templateLocation: 'InLine'
+    inlinetemplate: |
+      ## Build {{buildDetails.buildNumber}}
+      * **Branch**: {{buildDetails.sourceBranch}}
+      * **Tags**: {{buildDetails.tags}}
+      * **Completed**: {{buildDetails.finishTime}}
+      * **Previous Build**: {{compareBuildDetails.buildNumber}}
+    dumpPayloadToConsole: false
+    dumpPayloadToFile: false
+    replaceFile: True
+    getParentsAndChildren: False
+    getAllParents: False
+    getIndirectPullRequests: False
+    stopOnError: False
+    considerPartiallySuccessfulReleases: False
+    checkForManuallyLinkedWI: False
+    wiqlFromTarget: 'WorkItems'
