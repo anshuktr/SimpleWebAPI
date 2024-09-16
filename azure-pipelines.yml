@@ -29,7 +29,7 @@ steps:
 - script: dotnet test --no-build --verbosity normal
   displayName: 'Run tests'
 
-- script: md $(Build.ArtifactStagingDirectory)/wiki
+- script: md "$(Build.ArtifactStagingDirectory)/wiki"
   displayName: 'Create wiki directory'
 
 - task: XplatGenerateReleaseNotes@4
