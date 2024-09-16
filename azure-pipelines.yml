@@ -40,7 +40,7 @@ steps:
       * **Completed**: {{buildDetails.finishTime}}
       * **Previous Build**: {{compareBuildDetails.buildNumber}}
     dumpPayloadToConsole: false
-    dumpPayloadToFile: false
+    dumpPayloadToFile: True
     replaceFile: True
     getParentsAndChildren: False
     getAllParents: False
