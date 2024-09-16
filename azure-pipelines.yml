@@ -31,7 +31,7 @@ steps:
 
 - task: XplatGenerateReleaseNotes@4
   inputs:
-    outputfile: '$(Build.ArtifactStagingDirectory)/wiki/releasenotes.md'
+    outputfile: '$(Build.ArtifactStagingDirectory)\wiki\releasenotes.md'
     templateLocation: 'InLine'
     inlinetemplate: |
       ## Build {{buildDetails.buildNumber}}
