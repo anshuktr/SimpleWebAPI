@@ -12,4 +12,4 @@ jobs:
         with:
           azure-devops-project-url: ${{ secrets.AZURE_DEVOPS_PROJECT_URL}}
           azure-pipeline-name: 'anshuktr.SimpleWebAPI'
-          azure-devops-token: ${{ secrest.AZURE_DEVOPS_TOKEN }}
+          azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
